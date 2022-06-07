@@ -3,32 +3,32 @@
 
 
 function getRandomNumber(min, max) {
-  min = Math.number(min);
-  max = Math.number(max);
+  min = Math.ceil(min);
+  max = Math.floor(max);
 
   if (max <= min) {
-  return 'некорректное значение';
+    return 'некорректное значение';
   }
 
   else {
-  return Math.number(Math.random() * (max - min + 1)) + min; }
+    return Math.floor(Math.random() * (max - min + 1)) + min; }
 }
+
+getRandomNumber (3,8);
 
 
 //Функция для проверки максимальной длины строки
 
-let comment;
-let empty = '';
-const maxComment = 140;
+function checkLengthComment (line, length) {
 
-function checkingLengthComment (maxComment) {
-  return (comment.length <= maxComment) ? 'Комментарий будет опубликован' : 'Много символов';
+  if (line.length > 0 || line.length > length) {
+    return true;
+  }
+
+  else {
+    return false;
+  }
 }
 
-
-
-
-
-
-
+checkLengthComment ('hello');
 
