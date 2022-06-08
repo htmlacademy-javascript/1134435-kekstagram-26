@@ -21,7 +21,7 @@ getRandomNumber (3,8);
 
 function checkLengthComment (line, length) {
 
-  if (line.length > 0 || line.length > length) {
+  if (line.length > 0 && line.length <= length) {
     return true;
   }
 
@@ -30,5 +30,5 @@ function checkLengthComment (line, length) {
   }
 }
 
-checkLengthComment ('hello');
+checkLengthComment ('hello', 140);
 
