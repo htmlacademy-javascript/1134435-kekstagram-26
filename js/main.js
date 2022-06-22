@@ -89,7 +89,7 @@ const description = [
   'пейзаж',
 ];
 
-const likes = getRandomLikes(15, 200);
+const likes = Array.from(new Array(185), (x,i) => i+15);
 
 const NAMES = [
   'Варвара',
@@ -174,25 +174,13 @@ function getRandomId(max) {
 }
 
 
-function getRandomLikes(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-
-  if (max <= min) {
-    return 'некорректное значение';
-  }
-
-  else {
-    return Math.floor(Math.random() * (max - min + 1)) + min; }
-}
-
 const SIMILAR_POSTS_COUNT = 25;
 
 const createPost = () => ({
   id,
   PHOTO: PHOTOS[getRandomPositiveInteger(0, PHOTOS.length - 1)],
   description: description[getRandomPositiveInteger(0, description.length - 1)],
-  likes,
+  likes: likes[getRandomPositiveInteger(14, likes.length - 1)],
   NAME: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)],
   arrComment: arrComment[rand],
 });
