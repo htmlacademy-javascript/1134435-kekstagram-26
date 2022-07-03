@@ -81,7 +81,11 @@ arrComment[5] = {
   name: 'Павел',
 };
 
-const rand = Math.floor(Math.random() * arrComment.length);
+let comments = [arrComment[0],arrComment[1],arrComment[2],arrComment[3],arrComment[4],arrComment[5]];
+
+for (let i=0; i,comments.length-1; i++) {
+  comments = comments[i];
+}
 
 
 // Функция для рандомного значения
@@ -102,7 +106,7 @@ const createPost = () => ({
   DESCRIPTIONS: DESCRIPTIONS[getRandomPositiveInteger(0, DESCRIPTIONS.length - 1)],
   LIKES: LIKES[getRandomPositiveInteger(14, LIKES.length - 1)],
   NAME: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)],
-  arrComment: arrComment[rand],
+  comments,
 });
 
 const similarPosts = Array.from({length: SIMILAR_POSTS_COUNT}, createPost);
