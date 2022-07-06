@@ -1,12 +1,22 @@
 
-// ; На основе временных данных для разработки и шаблона #picture создайте DOM-элементы, соответствующие фотографиям, и заполните их данными:
+import { similarPosts } from './data.js';
 
-// ; Адрес изображения url подставьте как атрибут src изображения.
-// ; Количество лайков likes выведите в блок .picture__likes.
-// ; Количество комментариев comments выведите в блок .picture__comments.
-// ; Отрисуйте сгенерированные DOM-элементы в блок .pictures. Для вставки элементов используйте DocumentFragment.
+//Контейнер для изображений от других пользователей
+const picturesContainer = document.querySelector('.pictures');
 
-const userPicture = document.querySelector('.big-picture');
-userPicture.classList.remove('hidden');
+//Поиск шаблона, получение его содержимого
+const picturesTemplate = document.querySelector('#picture').content;
+const picturesFragment = document.createDocumentFragment();
 
 
+const newPost = similarPosts;
+
+newPost.forEach(({comment, likes, url}) => {
+  const postElement = picturesTemplate.cloneNode(true);
+  postElement.querySelector('.picture__comments').textContent = comment;
+  postElement.querySelector('.picture__likes').textContent = likes;
+  postElement.querySelector('.picture__img').src = url;
+  picturesFragment.appendChild(postElement);
+});
+
+picturesContainer.appendChild(picturesFragment);
