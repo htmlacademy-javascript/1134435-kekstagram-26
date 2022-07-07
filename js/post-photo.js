@@ -1,4 +1,3 @@
-
 import { similarPosts } from './data.js';
 
 //Контейнер для изображений от других пользователей
@@ -20,3 +19,6 @@ newPost.forEach(({comment, likes, url}) => {
 });
 
 picturesContainer.appendChild(picturesFragment);
+
+
+export {picturesContainer, newPost};

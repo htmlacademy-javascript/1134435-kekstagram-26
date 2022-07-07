@@ -34,5 +34,7 @@ const getRandomPositiveInteger = (a, b) => {
 };
 
 
-export { getRandomPositiveInteger,getRandomNumber };
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+export { getRandomPositiveInteger,getRandomNumber,isEscapeKey };
 
