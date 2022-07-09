@@ -44,4 +44,5 @@ const renderPicture = ({ url, description, comments, likes }) => {
   renderComments(comments);
 };
 
+
 export { renderPicture };

@@ -2,7 +2,6 @@ import { getRandomPositiveInteger,getRandomNumber } from './util.js';
 
 const descriptionCount = 25;
 
-
 const ids = [];
 const urls = [];
 for(let i = 0; i < descriptionCount; i++) {
