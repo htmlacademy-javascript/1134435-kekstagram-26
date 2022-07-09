@@ -1,4 +1,5 @@
 import { similarPosts } from './data.js';
+// import { closePictureModal } from './post-modal';
 
 //Контейнер для изображений от других пользователей
 const picturesContainer = document.querySelector('.pictures');

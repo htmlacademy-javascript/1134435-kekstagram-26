@@ -35,4 +35,4 @@ postModalCloseElement.addEventListener('click', () => {
   closePictureModal();
 });
 
-export { openPictureModal };
+export {closePictureModal};
