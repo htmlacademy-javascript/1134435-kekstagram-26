@@ -1,5 +1,6 @@
-
 import { similarPosts } from './data.js';
+import {openPictureModal} from './post-modal.js';
+import {renderPicture} from './post-big-photo.js';
 
 //Контейнер для изображений от других пользователей
 const picturesContainer = document.querySelector('.pictures');
@@ -20,3 +21,10 @@ newPost.forEach(({comment, likes, url}) => {
 });
 
 picturesContainer.appendChild(picturesFragment);
+
+picturesContainer.addEventListener('click', () => {
+  renderPicture(openPictureModal);
+});
+
+
+export { newPost, picturesContainer };

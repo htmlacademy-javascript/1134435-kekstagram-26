@@ -2,7 +2,6 @@ import { getRandomPositiveInteger,getRandomNumber } from './util.js';
 
 const descriptionCount = 25;
 
-
 const ids = [];
 const urls = [];
 for(let i = 0; i < descriptionCount; i++) {
@@ -117,6 +116,6 @@ const generatePosts = () => Array.from({length: similarPostsCount}, createPost);
 // eslint-disable-next-line no-console
 console.log(similarPosts);
 
-export { createPost, similarPosts};
+export { createPost, similarPosts };
 
 

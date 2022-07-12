@@ -30,7 +30,7 @@
       <section class="img-upload">
         <div class="img-upload__wrapper">
           <h2 class="img-upload__title  visually-hidden">Загрузка фотографии</h2>
-          <form class="img-upload__form" id="upload-select-image" method="post" enctype="multipart/form-data" autocomplete="off">
+          <form class="img-upload__form" id="upload-select-image" action="https://26.javascript.pages.academy/kekstagram" method="post" action="index.html" enctype="multipart/form-data" autocomplete="off" >
 
             <!-- Изначальное состояние поля для загрузки изображения -->
             <fieldset class="img-upload__start">
@@ -46,7 +46,7 @@
                   <!-- Изменение размера изображения -->
                   <fieldset class="img-upload__scale  scale">
                     <button type="button" class="scale__control  scale__control--smaller">Уменьшить</button>
-                    <input type="text" class="scale__control  scale__control--value" value="55%" title="Image Scale" name="scale" readonly>
+                    <input type="text" class="scale__control  scale__control--value" value="100%" title="Image Scale" name="scale" readonly>
                     <button type="button" class="scale__control  scale__control--bigger">Увеличить</button>
                   </fieldset>
 
@@ -115,11 +115,11 @@
 
                 <!-- Добавление хэш-тегов и комментария к изображению -->
                 <fieldset class="img-upload__text text">
-                  <div class="img-upload__field-wrapper">
+                  <div class="text__field-wrapper">
                     <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег">
                   </div>
-                  <div class="img-upload__field-wrapper">
-                    <textarea class="text__description" name="description" placeholder="Ваш комментарий..."></textarea>
+                  <div class="text__field-wrapper">
+                    <textarea class="text__description" name="description" maxlength="140" placeholder="Ваш комментарий..."></textarea>
                   </div>
                 </fieldset>
 
@@ -170,11 +170,13 @@
           <button type="button" class="social__comments-loader  comments-loader">Загрузить еще</button>
 
           <!-- Форма для отправки комментария -->
+          <form class = "social__form" action="index.html" method="POST" autocomplete="off">
           <div class="social__footer">
             <img class="social__picture" src="img/avatar-6.svg" alt="Аватар комментатора фотографии" width="35" height="35">
             <input type="text" class="social__footer-text" placeholder="Ваш комментарий...">
             <button type="button" class="social__footer-btn" name="button">Отправить</button>
           </div>
+        </form>
         </div>
 
         <!-- Кнопка для выхода из полноэкранного просмотра изображения -->
@@ -231,6 +233,7 @@
   <template id="messages">
     <div class="img-upload__message  img-upload__message--loading">Загружаем...</div>
   </template>
-<script src="/js/main.js" type="module"></script>
+  <script src="pristine/pristine.min.js"></script>
+  <script src="./js/main.js" type="module"></script>
 </body>
 </html>
