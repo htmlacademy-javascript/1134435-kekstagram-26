@@ -11,19 +11,22 @@ commentCountElement.classList.add('hidden');
 const commentsLoaderElement = postModalElement.querySelector('.comments-loader');
 commentsLoaderElement.classList.add('hidden');
 
-const modalEscKeydownHandler = (evt) => {
+
+function modalEscKeydownHandler (evt) {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
     closePictureModal();
   }
-};
+}
 
-const openPictureModal = (post) => {
+
+function openPictureModal (post)  {
   body.classList.add('modal-open');
   postModalElement.classList.remove('hidden');
   renderPicture(post);
   document.addEventListener('keydown', modalEscKeydownHandler);
-};
+}
+
 
 function closePictureModal() {
   body.classList.remove('modal-open');
@@ -35,4 +38,4 @@ postModalCloseElement.addEventListener('click', () => {
   closePictureModal();
 });
 
-export {closePictureModal};
+export { openPictureModal, closePictureModal, modalEscKeydownHandler };

@@ -40,7 +40,7 @@ const renderPicture = ({ url, description, comments, likes }) => {
   postModalElement.querySelector('.big-picture__img img').src = url;
   postModalElement.querySelector('.social__caption').textContent = description;
   postModalElement.querySelector('.likes-count').textContent = likes;
-  postModalElement.querySelector('.comments-count').textContent = comments.length;
+  postModalElement.querySelector('.comments-count').textContent = comments;
   renderComments(comments);
 };
 
